@@ -8,6 +8,7 @@
     <title>Rock! Paper! Scissors!</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
     <link rel="stylesheet" href="assets/styles/main.css">
 </head>
 
@@ -16,21 +17,120 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-12">
                 <h2>Rock! Paper! Scissors!</h2>
+                <p>To Do List:
+                    <ol>
+                        <li>Make buttons</li>
+                        <li>Learn about randomizer</li>
+                        <li>Make sure it's working</li>
+                        <li>Continue to overcome adversity</li>
+                        <li>Don't give up! You can do it!</li>
+                    </ol>
+                </p>
             </div>
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4"></div>
-        </div>
-    </div>
+            <div class="col-sm-12">
+                <p>What do rock, paper and scissors look like if we use icons from FontAwesome?</p>
+                <h1>
+                    <ul>
+                        <li>
+                            <i class="fa fa-hand-rock-o" aria-hidden="true"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-hand-paper-o" aria-hidden="true"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-hand-scissors-o" aria-hidden="true"></i>
+                        </li>
+                    </ul>
+                </h1>
 
-    <script src="assets/scripts/app.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+            </div>
+            <div class="col-sm-12">
+                <p>Okay, great! You are playing against the computer. Do they have cool icons for these as well?</p>
+                <h1>
+                    <ul>
+                        <li>
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-laptop fa-6" aria-hidden="true"></i>
+                        </li>
+                    </ul>
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <p>I bet they have a cool icon for a trophy for the winner, too.</p>
+                <h1>
+                    <i class="fa fa-trophy" aria-hidden="true"></i>
+                </h1>
+                <p>Do they have an unhappy face for the loser?</p>
+                <h1>
+                    <i class="fa fa-frown-o" aria-hidden="true"></i>
+                </h1>
+            </div>
+            <div class="col-sm-12">
+                <h4>Okay! We've got some basic visual elements. Now let's see if we can get the computer to choose at random
+                    from rock, paper and scissors:</h4>
+                <h1>Choice:</h1>
+                <h1>
+                    <div id="choice"></div>
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <h2>The interface should be simple and must contain at least 3 buttons: Rock, Paper, and Scissors.</h2>
+            <div class="col-sm-12" m-2>
+                <button type="button" class="btn btn-primary btn-lg" onclick="play('rock')">
+                    <i class="fa fa-hand-rock-o" aria-hidden="true"></i> Rock!</button>
+            </div>
+            <div class="col-sm-12">
+                <button type="button" class="btn btn-primary btn-lg" onclick="play('paper')">
+                    <i class="fa fa-hand-paper-o" aria-hidden="true"></i> Paper!</button>
+            </div>
+            <div class="col-sm-12">
+                <button type="button" class="btn btn-primary btn-lg" onclick="play('scissors')">
+                    <i class="fa fa-hand-scissors-o" aria-hidden="true"></i> Scissors!</button>
+            </div>
+        </div>
+        <div class="row">
+            <h4>When a button is pressed, the game should execute a function written in javascript. Use the onclick attribute
+                to execute the function.</h4>
+        </div>
+        <div class="row bigger-text">
+            <div class="col-sm-12">
+                <h1>Ok! Let's get some outcomes to print out in the cards below:</h1>
+            </div>
+            <div class="col-sm-12">
+                <span>Outcome:</span><span id="outcome">...</span>
+            </div>
+            <div class="col-sm-12">
+                <span>Plays:</span><span id="play-count">...</span>
+            </div>
+            <div class="col-sm-12">
+                <span>Wins:</span><span id="wins">...</span>
+            </div>
+            <div class="col-sm-12">
+                <span>Losses:</span><span id="losses">...</span>
+            </div>
+            <div class="col-sm-12">
+                <span>Ties:</span><span id="ties">...</span>
+            </div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3"></div>
+            
+        </div>
+
+        <script src="assets/scripts/app.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
 </body>
 
 </html>
